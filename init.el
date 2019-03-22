@@ -9,8 +9,6 @@
        (lookup           ; helps you navigate your code and documentation
         +docsets)        ; ...or in Dash docsets locally
        snippets          ; my elves. They type so I don't have to
-       spellcheck        ; tasing you for misspelling mispelling
-       syntax-checker    ; tasing you for every semicolon you forget
        workspaces        ; tab emulation, persistence & separate workspaces
 
        :completion
@@ -22,8 +20,8 @@
        :ui
        ;;deft              ; notational velocity for Emacs
        doom              ; what makes DOOM look the way it does
-       doom-dashboard    ; a nifty splash screen for Emacs
-       doom-modeline     ; a snazzy Atom-inspired mode-line
+       doom-dashboard    ; a nifty splash screen for
+       modeline          ; Modeline
        doom-quit         ; DOOM quit-message prompts when you quit Emacs
        evil-goggles      ; display visual hints when editing in evil
        ;;fci               ; a `fill-column' indicator
@@ -63,8 +61,11 @@
 
        :tools
        ;;ansible
-       ;;docker
+       docker
        editorconfig      ; let someone else argue about tabs vs spaces
+       flycheck            ; Syntax checking
+       flyspell            ; Spell checking
+       lsp                 ; Language server support
        ;;ein               ; tame Jupyter notebooks with emacs
        ;;gist              ; interacting with github gists
        ;;macos             ; MacOS-specific commands
@@ -93,12 +94,12 @@
        ;;elm               ; care for a cup of TEA?
        emacs-lisp        ; drown in parentheses
        ;;ess               ; emacs speaks statistics
-       ;;go                ; the hipster dialect
+       go                ; the hipster dialect
        (haskell +intero) ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ;
        ;;(java +meghanada) ; the poster child for carpal tunnel syndrome
-       ;;javascript        ; all(hope(abandon(ye(who(enter(here))))))
+       javascript        ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
        ;;latex             ; writing papers in Emacs has never been so fun
        ;;ledger            ; an accounting system in Emacs
@@ -114,7 +115,7 @@
         +export          ; Exporting org to whatever you want
         +present)        ; Emacs for presentations
        ;;perl              ; write code no one else can comprehend
-       ;;php               ; perl's insecure younger brother
+       php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
        ;;python            ; beautiful is better than ugly
