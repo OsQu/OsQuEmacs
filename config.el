@@ -14,10 +14,15 @@
 
 (setq projectile-project-search-path '("~/smartly/"))
 
+(setq-default fill-column 120)
+(setq org-mode-headline-style 'setext)
+
+
 ;; Autocompletion
 (set-company-backend! 'python-mode '(company-jedi company-files))
 (set-company-backend! 'ruby-mode '(company-files company-dabbrev-code))
 (set-company-backend! 'rjsx-mode '(company-lsp company-dabbrev-code))
+(set-company-backend! 'typescript-mode '(company-tide company-dabbrev-code))
 
 ;; Keybingins
 
@@ -46,6 +51,27 @@
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . javascript-mode))
 
 (flycheck-add-next-checker 'lsp-ui 'javascript-eslint)
+
+;; Typescript
+(defun my/setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  (company-mode +1)
+  (prettier-js-mode +1))
+(setq company-tooltip-align-annotations t)
+(add-hook 'typescript-mode-hook #'my/setup-tide-mode)
+
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+(add-hook 'web-mode-hook
+          (lambda ()
+            (when (string-equal "tsx" (file-name-extension buffer-file-name))
+              (my/setup-tide-mode))))
+;; enable typescript-tslint checker
+(flycheck-add-mode 'typescript-tslint 'web-mode)
 
 ;; Go
 (add-hook 'go-mode-hook
