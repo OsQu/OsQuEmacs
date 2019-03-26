@@ -86,5 +86,10 @@
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline org-default-notes-file "Tasks")
          "* TODO %?\n  %a")
-        ("j" "Journal" entry (file+datetree "~/org/journal.org")
+        ("j" "Journal" entry (file+datetree "~/Dropbox/org/journal.org")
          "* %?\nEntered on %U\n  %i\n  %a")))
+
+(setq org-agenda-custom-commands
+      '(("n" "Agenda and TODOs"
+         ((agenda "")
+          (todo "TODO")))))
