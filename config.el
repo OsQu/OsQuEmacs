@@ -2,6 +2,7 @@
 
 ;; Place your private configuration here
 
+(load-file "~/.doom.d/org-exports/flowdock.el")
 (load-theme 'doom-solarized-light t)
 
 (setq display-line-numbers-type 'relative)
