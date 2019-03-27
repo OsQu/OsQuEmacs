@@ -79,7 +79,7 @@
             (add-hook 'before-save-hook 'gofmt-before-save)))
 
 ;; Org mode
-(setq org-agenda-files '("~/Dropbox/org/work" "~/Dropbox/org" "~/Dropbox/org/omat" "~/Dropbox/org/omat/talo"))
+(setq org-agenda-files '("~/Dropbox/org"))
 (setq org-default-notes-file (expand-file-name "~/Dropbox/org/refile.org"))
 (setq org-use-tag-inheritance nil)
 
