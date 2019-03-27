@@ -28,7 +28,9 @@
 
 (map! :leader
       (:desc "file" :prefix "f"
-        :desc "Find in files" :n "s" #'helm-do-ag-project-root))
+        :desc "Find in files" :n "s" #'helm-do-ag-project-root)
+      (:desc "open / org" :prefix "o"
+        :desc "Find org file" :n "." #'org-find-file))
 
 (setq ruby-insert-encoding-magic-comment nil)
 
@@ -93,3 +95,7 @@
       '(("n" "Agenda and TODOs"
          ((agenda "")
           (todo "TODO")))))
+
+;; Custom functions
+(defun org-find-file () (interactive)
+  (helm-find-files-1 "~/Dropbox/org/"))
