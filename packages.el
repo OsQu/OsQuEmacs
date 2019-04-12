@@ -10,3 +10,4 @@
 (package! add-node-modules-path :recipe (:fetcher github :repo "codesuki/add-node-modules-path"))
 (package! writeroom-mode)
 (package! prettier-js)
+(package! groovy-mode)

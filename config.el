@@ -15,7 +15,6 @@
 (setq projectile-project-search-path '("~/smartly/"))
 
 (setq-default fill-column 120)
-(setq org-mode-headline-style 'setext)
 
 
 ;; Autocompletion
@@ -81,9 +80,13 @@
             (add-hook 'before-save-hook 'gofmt-before-save)))
 
 ;; Org mode
+(after! org
+  (add-to-list 'org-modules 'org-habit t))
+
 (setq org-agenda-files '("~/Dropbox/org"))
 (setq org-default-notes-file (expand-file-name "~/Dropbox/org/refile.org"))
 (setq org-use-tag-inheritance nil)
+(setq org-mode-headline-style 'setext)
 
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline org-default-notes-file "Tasks")
@@ -96,6 +99,7 @@
          ((agenda "")
           (todo "TODO")))))
 
+(setq org-image-actual-width nil)
 ;; Custom functions
 (defun org-find-file () (interactive)
   (helm-find-files-1 "~/Dropbox/org/"))
