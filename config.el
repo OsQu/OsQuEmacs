@@ -83,7 +83,17 @@
 (after! org
   (add-to-list 'org-modules 'org-habit t))
 
-(setq org-agenda-files '("~/Dropbox/org"))
+(setq org-agenda-files '(
+                         "~/Dropbox/org/improvements.org"
+                         "~/Dropbox/org/investigation.org"
+                         "~/Dropbox/org/journal.org"
+                         "~/Dropbox/org/meitsi.org"
+                         "~/Dropbox/org/refile.org"
+                         "~/Dropbox/org/retros.org"
+                         "~/Dropbox/org/talo.org"
+                         "~/Dropbox/org/todo.org"
+                         "~/Dropbox/org/weeklies.org"
+                         ))
 (setq org-default-notes-file (expand-file-name "~/Dropbox/org/refile.org"))
 (setq org-use-tag-inheritance nil)
 (setq org-mode-headline-style 'setext)
