@@ -1,0 +1,13 @@
+#+TITLE: Test notes
+
+* This is a test note with a list
+- Foo
+- Bar
+- Baz
+* Then nested
+** With orderd list
+1. something
+2. Else
+3. Amazing
+** And with plain text
+Hi this is plain text
