@@ -29,7 +29,11 @@
       (:desc "file" :prefix "f"
         :desc "Find in files" :n "s" #'helm-do-ag-project-root)
       (:desc "open / org" :prefix "o"
-        :desc "Find org file" :n "." #'org-find-file))
+        :desc "Find org file" :n "." #'org-find-file
+        (:desc "org-tracker" :prefix "t"
+            :desc "Add start date" :n "s" #'org-tracker-task-start
+            :desc "Add moved to PR date" :n "p" #'org-tracker-task-pr
+            :desc "Add end date" :n "e" #'org-tracker-task-end)))
 
 (setq ruby-insert-encoding-magic-comment nil)
 
