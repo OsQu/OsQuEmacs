@@ -11,6 +11,13 @@
   (interactive)
   (org-tracker-prompt-time "DONE_AT" "Done at"))
 
+(defun org-tracker-task-assignee ()
+  (interactive)
+  (let* ((old-assignee (org-entry-get nil "ASSIGNEE"))
+         (assignee (read-string "Add assignee: " old-assignee))
+         )
+    (org-set-property "ASSIGNEE" assignee)))
+
 
 (defun org-tracker-prompt-time (property readable-property)
   "Set property into a prompted time"
