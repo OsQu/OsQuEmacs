@@ -3,6 +3,7 @@
 ;; Place your private configuration here
 
 (load-file "~/.doom.d/org-exports/flowdock.el")
+(load-file "~/.doom.d/org-tracker/tracker.el")
 (load-theme 'doom-solarized-light t)
 
 (setq display-line-numbers-type 'relative)
@@ -33,7 +34,8 @@
         (:desc "org-tracker" :prefix "t"
             :desc "Add start date" :n "s" #'org-tracker-task-start
             :desc "Add moved to PR date" :n "p" #'org-tracker-task-pr
-            :desc "Add end date" :n "e" #'org-tracker-task-end)))
+            :desc "Add end date" :n "e" #'org-tracker-task-done
+            :desc "Add assignee" :n "a" #'org-tracker-task-assignee)))
 
 (setq ruby-insert-encoding-magic-comment nil)
 

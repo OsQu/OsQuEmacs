@@ -1,20 +1,14 @@
 #+TITLE: Test stories
 * Epic #1
 ** Story #1
-*** Task #1
-*** Task #2
+*** Setup envoy to dev
 :PROPERTIES:
-:STARTED_AT: 06/19/19
+:ASSIGNEE: waltsu
+:STARTED_AT: 06/18/19
 :PR_AT:    06/20/19
-:DONE_AT:  06/24/19
+:DONE_AT:  06/21/19
+:FOOBAR:   what is this
 :END:
-*** Task #3
-*** Task #4
-*** Task #5
-:PROPERTIES:
-:STARTED_AT: 06/17/19
-:END:
-*** Task #6
 ** Story #2
 *** Task #1
 *** Task #2
