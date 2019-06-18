@@ -15,8 +15,16 @@
   (interactive)
   (let* ((old-assignee (org-entry-get nil "ASSIGNEE"))
          (assignee (read-string "Add assignee: " old-assignee))
+         (sorted-assignee (
+                           string-join
+                            (sort
+                                (mapcar 'string-trim (split-string assignee ","))
+                                #'string-lessp
+                                )
+                           ", "
+                           ))
          )
-    (org-set-property "ASSIGNEE" assignee)))
+    (org-set-property "ASSIGNEE" sorted-assignee)))
 
 
 (defun org-tracker-prompt-time (property readable-property)
