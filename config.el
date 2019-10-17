@@ -99,6 +99,7 @@
                          "~/Dropbox/org/talo.org"
                          "~/Dropbox/org/todo.org"
                          "~/Dropbox/org/weeklies.org"
+                         "~/Dropbox/org/toil.org"
                          ))
 (setq org-default-notes-file (expand-file-name "~/Dropbox/org/refile.org"))
 (setq org-use-tag-inheritance nil)
@@ -108,7 +109,9 @@
       '(("t" "Todo" entry (file+headline org-default-notes-file "Tasks")
          "* TODO %?\n  %a")
         ("j" "Journal" entry (file+datetree "~/Dropbox/org/journal.org")
-         "* %?\nEntered on %U\n  %i\n  %a")))
+         "* %?\nEntered on %U\n  %i\n  %a")
+        ("T" "Toil" entry (file+headline "~/Dropbox/org/toil.org" "Uncategorized toil")
+         "** %?")))
 
 (setq org-agenda-custom-commands
       '(("n" "Agenda and TODOs"
