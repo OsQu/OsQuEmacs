@@ -11,3 +11,4 @@
 (package! writeroom-mode)
 (package! prettier-js)
 (package! groovy-mode)
+(package! terraform-mode)
