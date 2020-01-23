@@ -17,6 +17,7 @@
 
 (setq-default fill-column 120)
 
+(set-language-environment "English")
 
 ;; Autocompletion
 (set-company-backend! 'python-mode '(company-jedi company-files))
@@ -100,6 +101,7 @@
                          "~/Dropbox/org/todo.org"
                          "~/Dropbox/org/weeklies.org"
                          "~/Dropbox/org/toil.org"
+                         "~/Dropbox/org/notes.org"
                          ))
 (setq org-default-notes-file (expand-file-name "~/Dropbox/org/refile.org"))
 (setq org-use-tag-inheritance nil)
