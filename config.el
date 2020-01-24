@@ -44,6 +44,7 @@
 (require 'flycheck)
 (require 'lsp-mode)
 (require 'lsp-ui)
+(require 'tide)
 (eval-after-load 'javascript-mode
   '(progn
      (add-hook 'js2-mode-hook #'add-node-modules-path)))
@@ -56,11 +57,16 @@
 
 (add-hook 'flycheck-mode-hook 'my/disable-checkers)
 
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . javascript-mode))
-
 (flycheck-add-next-checker 'lsp-ui 'javascript-eslint)
+(flycheck-add-next-checker 'tsx-tide 'javascript-eslint)
+(flycheck-add-next-checker 'typescript-tide 'javascript-eslint)
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+(flycheck-add-mode 'javascript-eslint 'typescript-mode)
 
 ;; Typescript
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
+
 (defun my/setup-tide-mode ()
   (interactive)
   (tide-setup)
@@ -73,13 +79,11 @@
 (setq company-tooltip-align-annotations t)
 (add-hook 'typescript-mode-hook #'my/setup-tide-mode)
 
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
-(add-hook 'web-mode-hook
+(add-hook 'typescript-mode-hook
           (lambda ()
             (when (string-equal "tsx" (file-name-extension buffer-file-name))
               (my/setup-tide-mode))))
 ;; enable typescript-tslint checker
-(flycheck-add-mode 'typescript-tslint 'web-mode)
 
 ;; Go
 (add-hook 'go-mode-hook
