@@ -18,6 +18,7 @@
 (setq-default fill-column 120)
 
 (set-language-environment "English")
+(setq ispell-dictionary "en_GB")
 
 ;; Autocompletion
 (set-company-backend! 'python-mode '(company-jedi company-files))
@@ -29,7 +30,7 @@
 
 (map! :leader
       (:desc "file" :prefix "f"
-        :desc "Find in files" :n "s" #'helm-do-ag-project-root)
+        :desc "Find in files" :n "s" #'helm-grep-do-git-grep)
       (:desc "open / org" :prefix "o"
         :desc "Find org file" :n "." #'org-find-file
         (:desc "org-tracker" :prefix "t"

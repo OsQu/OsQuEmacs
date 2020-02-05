@@ -3,13 +3,6 @@
 
 (doom! :feature
        ;;debugger          ; FIXME stepping through code, to help you add bugs
-       eval              ; run code, run (also, repls)
-       (evil +everywhere); come to the dark side, we have cookies
-       file-templates    ; auto-snippets for empty files
-       (lookup           ; helps you navigate your code and documentation
-        +docsets)        ; ...or in Dash docsets locally
-       snippets          ; my elves. They type so I don't have to
-       workspaces        ; tab emulation, persistence & separate workspaces
 
        :completion
        company           ; the ultimate code completion backend
@@ -18,12 +11,13 @@
        ;;ivy              ; a search engine for love and life
 
        :ui
+       ophints           ; display visual hints when editing in evil
+       workspaces        ; tab emulation, persistence & separate workspaces
        ;;deft              ; notational velocity for Emacs
        doom              ; what makes DOOM look the way it does
        doom-dashboard    ; a nifty splash screen for
        modeline          ; Modeline
        doom-quit         ; DOOM quit-message prompts when you quit Emacs
-       evil-goggles      ; display visual hints when editing in evil
        ;;fci               ; a `fill-column' indicator
        hl-todo           ; highlight TODO/FIXME/NOTE tags
        ;;modeline          ; snazzy, Atom-inspired modeline, plus API
@@ -41,6 +35,9 @@
        window-select     ; visually switch windows
 
        :editor
+       snippets          ; my elves. They type so I don't have to
+       file-templates    ; auto-snippets for empty files
+       (evil +everywhere); come to the dark side, we have cookies
        fold              ; (nigh) universal code folding
        ;;(format +onsave)  ; automated prettiness
        ;;lispy             ; vim for lisp, for people who dont like vim
@@ -55,16 +52,20 @@
         )
        electric          ; smarter, keyword-based electric-indent
        ;;eshell            ; a consistent, cross-platform shell (WIP)
-       imenu             ; an imenu sidebar and searchable code index
        ;;term              ; terminals in Emacs
        vc                ; version-control and Emacs, sitting in a tree
 
+       :checkers
+       syntax            ; Syntax checking
+       spell            ; Spell checking
+
        :tools
+       (lookup           ; helps you navigate your code and documentation
+        +docsets)        ; ...or in Dash docsets locally
+       eval              ; run code, run (also, repls)
        ;;ansible
        docker
        editorconfig      ; let someone else argue about tabs vs spaces
-       flycheck            ; Syntax checking
-       flyspell            ; Spell checking
        lsp                 ; Language server support
        ;;ein               ; tame Jupyter notebooks with emacs
        ;;gist              ; interacting with github gists
