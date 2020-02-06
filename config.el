@@ -65,7 +65,7 @@
 (flycheck-add-mode 'javascript-eslint 'typescript-mode)
 
 ;; Typescript
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
 
 (defun my/setup-tide-mode ()
@@ -80,11 +80,11 @@
 (setq company-tooltip-align-annotations t)
 (add-hook 'typescript-mode-hook #'my/setup-tide-mode)
 
-(add-hook 'typescript-mode-hook
+(add-hook 'web-mode-hook
           (lambda ()
             (when (string-equal "tsx" (file-name-extension buffer-file-name))
+              (set-company-backend! 'web-mode '(company-tide company-dabbrev-code))
               (my/setup-tide-mode))))
-;; enable typescript-tslint checker
 
 ;; Go
 (add-hook 'go-mode-hook
