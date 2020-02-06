@@ -13,3 +13,4 @@
 (package! groovy-mode)
 (package! terraform-mode)
 (package! helm-ag)
+(package! graphql-mode)
