@@ -30,7 +30,7 @@
 
 (map! :leader
       (:desc "file" :prefix "f"
-        :desc "Find in files" :n "s" #'helm-grep-do-git-grep)
+        :desc "Find in files" :n "s" #'helm-do-ag-project-root)
       (:desc "open / org" :prefix "o"
         :desc "Find org file" :n "." #'org-find-file
         (:desc "org-tracker" :prefix "t"
@@ -50,6 +50,9 @@
   '(progn
      (add-hook 'js2-mode-hook #'add-node-modules-path)))
 (add-hook 'js2-mode-hook 'prettier-js-mode)
+
+(eval-after-load 'typescript-mode
+  '(add-hook 'js-mode-hook #'add-node-modules-path))
 
 (defun my/disable-checkers ()
 (setq-default flycheck-disabled-checkers
