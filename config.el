@@ -13,7 +13,7 @@
       mac-command-modifier 'meta
       x-select-enable-clipboard t)
 
-(setq projectile-project-search-path '("~/smartly/"))
+(setq projectile-project-search-path '("~/swarmia/"))
 
 (setq-default fill-column 120)
 
