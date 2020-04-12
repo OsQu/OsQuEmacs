@@ -132,3 +132,6 @@
 ;; Custom functions
 (defun org-find-file () (interactive)
   (helm-find-files-1 "~/Dropbox/org/"))
+
+;; ispell
+(setq ispell-dictionary "english")
